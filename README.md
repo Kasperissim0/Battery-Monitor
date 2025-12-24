@@ -1,6 +1,6 @@
 # Repo Content Explanation
 ## What
-monitors & saves the lowest battery percentage
+Monitors & saves the lowest battery percentage
 ## Why
 My old mac (M1 2020 Mac Air) died after reaching ~half battery, I wanted to find the exact percentage.
 In order to launch an alert w. shortcuts, set low power mode (before), etc...
@@ -8,7 +8,7 @@ In order to launch an alert w. shortcuts, set low power mode (before), etc...
 Creates a daemon that checks the battery % every 45 seconds, and logs/saves it locally + pushes changes to github.
 
 # Relevant Commands
-## (En/Dis)able The Daemon
+## Daemon Control
 ### Enable Daemon
 ######
     launchctl unload ~/Library/LaunchAgents/com.user.batterymonitor.plist
