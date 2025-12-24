@@ -38,6 +38,7 @@ while true; do
         # Git commit (with error handling)
         cd "$SAVE_PATH" || { echo "$(date): Error - Could not cd to git repo" >> "$FILE_LOG"; sleep $CHECK_INTERVAL; continue; }
         
+        echo "$(date): Syncing Changes With GitHub" >> "$FILE_LOG"
         if git add . 2>> "$FILE_LOG"; then
             if git commit -m "New Low Achieved: $CURRENT%" 2>> "$FILE_LOG"; then
                 git push 2>> "$FILE_LOG" || echo "$(date): Warning - Git push failed" >> "$FILE_LOG"
