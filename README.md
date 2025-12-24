@@ -1,16 +1,17 @@
-# What
-Monitors + Saves The Lowest Battery Percentage
-# Why
-My Old Mac (M1 2020 Mac Air) died after reaching ~half battery, I wanted to find the exact percentage.
-(In order to launch an alert w. shortcuts, set low power mode (before), ...)
-# How
-// TODO Add description
+# Repo Content Explanation
+## What
+monitors & saves the lowest battery percentage
+## Why
+My old mac (M1 2020 Mac Air) died after reaching ~half battery, I wanted to find the exact percentage.
+In order to launch an alert w. shortcuts, set low power mode (before), etc...
+## How
+Creates a daemon that checks the battery % every 45 seconds, and logs/saves it locally + pushes changes to github.
 
 # Relevant Commands
 ## (En/Dis)able The Daemon
 ### Enable Daemon
 ######
--    launchctl unload ~/Library/LaunchAgents/com.user.batterymonitor.plist
+    launchctl unload ~/Library/LaunchAgents/com.user.batterymonitor.plist
 ### Disable Daemon
 ######
     launchctl load ~/Library/LaunchAgents/com.user.batterymonitor.plist
@@ -24,3 +25,29 @@ My Old Mac (M1 2020 Mac Air) died after reaching ~half battery, I wanted to find
 ## Get Ouput
 ######
     cat Documents/1_Projects/Battery\ Health/min*
+
+# The Contents Of com.user.batterymonitor.plist @ 24.12.2025
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.user.batterymonitor</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/kornienkodaniel/Documents/1_Projects/Battery Health/Extra/Scripts & Specs/battery_monitor.sh</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/Users/kornienkodaniel/Documents/1_Projects/Battery Health/Extra/battery_monitor_out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/kornienkodaniel/Documents/1_Projects/Battery Health/Extra/battery_monitor_err.log</string>
+</dict>
+</plist>
+
+```
