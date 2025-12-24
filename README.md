@@ -37,7 +37,7 @@ Creates a daemon that checks the battery % every 45 seconds, and logs/saves it l
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/kornienkodaniel/Documents/1_Projects/Battery Health/Extra/Scripts & Specs/battery_monitor.sh</string>
+        <string>/Users/kornienkodaniel/Documents/1_Projects/Battery Health/Extra/Script & Spec/battery_monitor.sh</string>
     </array>
     <key>RunAtLoad</key>
     <true/>

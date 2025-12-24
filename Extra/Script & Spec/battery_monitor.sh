@@ -22,7 +22,7 @@ while true; do
     
     # Skip if CURRENT is empty
     if [ -z "$CURRENT" ]; then
-        echo "$(date): Warning - Could not read battery percentage" >> "$FILE_LOG"
+        echo "$(date): ERROR - Could not read battery percentage" >> "$FILE_LOG"
         sleep $CHECK_INTERVAL
         continue
     fi
@@ -36,17 +36,17 @@ while true; do
         echo "$(date): New minimum reached: $CURRENT%" >> "$FILE_LOG"
 
         # Git commit (with error handling)
-        cd "$SAVE_PATH" || { echo "$(date): Error - Could not cd to git repo" >> "$FILE_LOG"; sleep $CHECK_INTERVAL; continue; }
+        cd "$SAVE_PATH" || { echo "$(date): ERROR - Could not cd to git repo" >> "$FILE_LOG"; sleep $CHECK_INTERVAL; continue; }
         
         echo "$(date): Syncing Changes With GitHub" >> "$FILE_LOG"
         if git add . 2>> "$FILE_LOG"; then
             if git commit -m "New Low Achieved: $CURRENT%" 2>> "$FILE_LOG"; then
-                git push 2>> "$FILE_LOG" || echo "$(date): Warning - Git push failed" >> "$FILE_LOG"
+                git push 2>> "$FILE_LOG" || echo "$(date): ERROR - Git push failed" >> "$FILE_LOG"
             else
-                echo "$(date): Warning - Git commit failed" >> "$FILE_LOG"
+                echo "$(date): ERROR - Git commit failed" >> "$FILE_LOG"
             fi
         else
-            echo "$(date): Warning - Git add failed" >> "$FILE_LOG"
+            echo "$(date): ERROR - Git add failed" >> "$FILE_LOG"
         fi
     fi
     
