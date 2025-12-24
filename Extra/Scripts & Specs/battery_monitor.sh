@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Battery Monitor Daemon
 # Tracks the minimum battery percentage reached
@@ -19,6 +20,13 @@ while true; do
     # Get current battery percentage
     CURRENT=$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)
     
+    # Skip if CURRENT is empty
+    if [ -z "$CURRENT" ]; then
+        echo "$(date): Warning - Could not read battery percentage" >> "$FILE_LOG"
+        sleep $CHECK_INTERVAL
+        continue
+    fi
+    
     # Read the minimum value from file
     MIN=$(head -n 1 "$FILE_LOWEST")
     
@@ -26,6 +34,17 @@ while true; do
     if [ "$CURRENT" -lt "$MIN" ]; then
         echo "$CURRENT" > "$FILE_LOWEST"
         echo "$(date): New minimum reached: $CURRENT%" >> "$FILE_LOG"
+
+        # Git commit (with error handling)
+        cd "$SAVE_PATH" || { echo "$(date): Error - Could not cd to git repo" >> "$FILE_LOG"; sleep $CHECK_INTERVAL; continue; }
+        
+        if git add . 2>> "$FILE_LOG"; then
+            if git commit -m "New Low Achieved: $CURRENT%" 2>> "$FILE_LOG"; then
+                git push 2>> "$FILE_LOG" || echo "$(date): Warning - Git push failed" >> "$FILE_LOG"
+            fi
+        else
+            echo "$(date): Warning - Git add failed" >> "$FILE_LOG"
+        fi
     fi
     
     sleep $CHECK_INTERVAL
