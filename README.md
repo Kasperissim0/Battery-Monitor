@@ -8,15 +8,19 @@ My Old Mac (M1 2020 Mac Air) died after reaching ~half battery, I wanted to find
 
 # Relevant Commands
 ## (En/Dis)able The Daemon
-###
-    launchctl unload ~/Library/LaunchAgents/com.user.batterymonitor.plist
-###
+### Enable Daemon
+######
+-    launchctl unload ~/Library/LaunchAgents/com.user.batterymonitor.plist
+### Disable Daemon
+######
     launchctl load ~/Library/LaunchAgents/com.user.batterymonitor.plist
 ## Check Working Script(s)
-###
+### Check If This Particular Daemon Is Active
+######
     launchctl list | grep --color=auto batterymonitor              
-###
+### List All Active User Created Daemons
+######
     launchctl list | grep --color=auto com.user
 ## Get Ouput
-###
-    cat Documents/1_Projects/Battery\ Health/min
+######
+    cat Documents/1_Projects/Battery\ Health/min*
