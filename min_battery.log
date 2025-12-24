@@ -52,8 +52,8 @@ Tue Dec 16 22:12:24 CET 2025: New minimum reached: 49%
 Tue Dec 16 22:13:24 CET 2025: New minimum reached: 48%
 Tue Dec 16 22:18:24 CET 2025: New minimum reached: 47%
 Tue Dec 16 22:20:24 CET 2025: New minimum reached: 46% [ COMPUTER TURNED OFF ]
-Tue Dec 16 22:21:38 CET 2025: New minimum reached: 12% [ RELOADED WITH THIS VALUE ]
-Tue Dec 16 22:22:38 CET 2025: New minimum reached: 15%
+Tue Dec 16 22:21:38 CET 2025: New minimum reached: 12% [ ? REAL VALUE ? ]
+Tue Dec 16 22:22:38 CET 2025: New minimum reached: 15% [ RELOADED WITH THIS VALUE ]
 
 [ NEW M4 2024 MAC AIR ]
 
@@ -143,3 +143,7 @@ To https://github.com/Kasperissim0/Battery.git
    eb19ecf..b3549e1  main -> main
 Wed Dec 24 18:39:09 CET 2025: New minimum reached: 64%
 Wed Dec 24 18:39:09 CET 2025: Syncing Changes With GitHub
+To https://github.com/Kasperissim0/Battery.git
+   b3549e1..babce74  main -> main
+Wed Dec 24 18:45:11 CET 2025: New minimum reached: 63%
+Wed Dec 24 18:45:11 CET 2025: Syncing Changes With GitHub
