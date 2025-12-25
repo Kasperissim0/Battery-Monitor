@@ -176,3 +176,7 @@ Wed Dec 24 19:01:48 CET 2025: ERROR - Git push failed
 Thu Dec 25 21:16:01 CET 2025: Battery monitor daemon started
 Thu Dec 25 23:15:14 CET 2025: New minimum reached: 59%
 Thu Dec 25 23:15:14 CET 2025: Syncing Changes With GitHub
+To https://github.com/Kasperissim0/Battery.git
+   25047dc..2dda433  main -> main
+Thu Dec 25 23:20:31 CET 2025: New minimum reached: 58%
+Thu Dec 25 23:20:31 CET 2025: Syncing Changes With GitHub
