@@ -18,10 +18,10 @@ Creates a daemon that checks the battery % every 45 seconds, and logs/saves it l
 ## Check Working Script(s)
 ### Check If This Particular Daemon Is Active
 ######
-    launchctl list | egrep "PID\s*Status\s*Label" && launchctl list | grep --color=always batterymonitor              
+    launchctl list | grep -i pid && launchctl list | grep --color batterymonitor
 ### List All Active User Created Daemons
 ######
-    launchctl list | egrep "PID\s*Status\s*Label" && launchctl list | grep --color=always com.user
+    launchctl list | sort -k3 | egrep -i --color "com.user|$"
 ## Get Ouput
 ######
     cat Documents/1_Projects/Battery\ Health/min*
