@@ -10,24 +10,35 @@ Creates a daemon that checks the battery % every 45 seconds, and logs/saves it l
 # Relevant Commands
 ## Daemon Control
 ### Enable Daemon
-######
-    launchctl unload ~/Library/LaunchAgents/com.user.batterymonitor.plist
+```bash
+launchctl unload ~/Library/LaunchAgents/com.user.batterymonitor.plist
+```
 ### Disable Daemon
-######
-    launchctl load ~/Library/LaunchAgents/com.user.batterymonitor.plist
+```bash
+launchctl load ~/Library/LaunchAgents/com.user.batterymonitor.plist
+```
 ## Check Working Script(s)
 ### Check If This Particular Daemon Is Active
-######
-    launchctl list | grep -i pid && launchctl list | grep --color batterymonitor
+```bash
+launchctl list | grep -i pid && launchctl list | grep --color batterymonitor
+```
 ### List All Active User Created Daemons
-######
-    launchctl list | sort -k3 | egrep -i --color "com.user|$"
+```bash
+launchctl list | sort -k3 | egrep --color "com.user|$"
+```
 ## Get Ouput
-######
-    cat Documents/1_Projects/Battery\ Health/min*
+### Full Files
+```bash
+bat ~/Code/Battery\ Health/min*
+```
+### Only Battery States
+```bash
+sort -k10nr min_battery.log | egrep --color ' [0-9][0-9]%'
+```
 
 # The Contents Of com.user.batterymonitor.plist @ 2025-12-29
-```
+```xml
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
