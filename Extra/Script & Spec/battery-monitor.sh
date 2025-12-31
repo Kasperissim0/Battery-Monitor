@@ -3,7 +3,7 @@ set -e
 
 # Battery Monitor Daemon
 # Tracks the minimum battery percentage reached
-SAVE_PATH="/Users/kasperissim0/Code/Battery Health"
+SAVE_PATH="/Users/kasperissim0/Code/Projects/Battery Health"
 FILE_LOWEST="$SAVE_PATH/min_value.log"
 FILE_LOG="$SAVE_PATH/min_battery.log"
 CHECK_INTERVAL=45  # Check every 45 seconds
