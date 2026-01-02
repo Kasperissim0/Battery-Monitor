@@ -315,3 +315,7 @@ Thu Jan  1 09:37:59 CET 2026: Battery monitor daemon started
 Thu Jan  1 18:16:48 CET 2026: Battery monitor daemon started
 Fri Jan  2 23:59:30 CET 2026: New minimum reached: 31%
 Fri Jan  2 23:59:30 CET 2026: Syncing Changes With GitHub
+To https://github.com/Kasperissim0/Battery.git
+   1d601cb..0b3b6a1  main -> main
+Sat Jan  3 00:03:17 CET 2026: New minimum reached: 30%
+Sat Jan  3 00:03:17 CET 2026: Syncing Changes With GitHub
