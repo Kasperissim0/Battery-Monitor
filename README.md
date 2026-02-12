@@ -29,7 +29,7 @@ launchctl list | sort -k3 | egrep --color "com.user|$"
 ## Get Ouput
 ### Full Files
 ```bash
-bat ~/Code/Battery\ Health/min*
+bat ~/Code/Projects/Battery\ Health/min*
 ```
 ### Only Battery States
 ```bash
