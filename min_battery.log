@@ -359,3 +359,9 @@ To https://github.com/Kasperissim0/Battery.git
    2ebde67..559e67e  main -> main
 Sun Feb 22 15:00:01 CET 2026: New minimum reached: 24%
 Sun Feb 22 15:00:01 CET 2026: Syncing Changes With GitHub
+remote: This repository moved. Please use the new location:        
+remote:   https://github.com/Kasperissim0/Battery-Monitor.git        
+To https://github.com/Kasperissim0/Battery.git
+   559e67e..d714ea4  main -> main
+Sun Feb 22 15:05:19 CET 2026: New minimum reached: 23%
+Sun Feb 22 15:05:19 CET 2026: Syncing Changes With GitHub
