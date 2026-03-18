@@ -445,3 +445,8 @@ To https://github.com/Kasperissim0/Battery.git
 Thu Mar 12 23:58:18 CET 2026: Battery monitor daemon started
 Sat Mar 14 21:46:09 CET 2026: New minimum reached: 10%
 Sat Mar 14 21:46:09 CET 2026: Syncing Changes With GitHub
+remote: This repository moved. Please use the new location:        
+remote:   https://github.com/Kasperissim0/Battery-Monitor.git        
+To https://github.com/Kasperissim0/Battery.git
+   8a96fc7..a99a693  main -> main
+Sat Mar 14 23:39:11 CET 2026: Battery monitor daemon started
